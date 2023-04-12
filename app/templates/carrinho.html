@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Estilo para o título */
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para a linha horizontal */
+        hr {
+            margin: 0 auto;
+            width: 80%;
+            height: 3px;
+            background-color: black;
+            border: none;
+        }
+
+        /* Estilo para a tabela */
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        /* Estilo para as células da tabela */
+        td {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        /* Estilo para as células do cabeçalho da tabela */
+        th {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Carrinho</h1>
+    <hr>
+    <table >
+        <tr>
+            <td>ID</td>
+            <td>Nome</td>
+            <td>Quantidade</td>
+            <td>Preço</td>
+            <td>Marca</td>
+            <td>Tipo</td>
+            
+        </tr>
+        {% for item in carrinho %}
+            <tr>
+                <td>{{ item.id}}</td>
+                <td>{{ item.name}}</td>
+                <td>{{ item.quantidade}}</td>
+                <td>{{ item.preço}}</td>
+                <td>{{ item.marca}}</td>
+                <td>{{ item.tipo}}</td>
+
+            </tr>
+        {% endfor %}
+    </table>
+      <form method="POST" action="{{ url_for('generate_pdf_controler') }}">
+        <label for="forma-pagamento">Forma de pagamento:</label>
+        <select id="forma-pagamento" name="forma-pagamento">
+          <option value="boleto">Boleto bancário</option>
+          <option value="cartao">Cartão de crédito</option>
+          <option value="transferencia">Pix</option>
+        </select>
+        <input type="submit" value="Gerar PDF">
+    </form>
+</body>
+</html>

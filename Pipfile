@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+wheel = "*"
+flask = "*"
+flask-sqlalchemy = "*"
+flask-login = "*"
+mysqlclient = {path = "./mysqlclient-2.1.1-cp311-cp311-win_amd64.whl"}
+pdfkit = "*"
+fpdf = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"

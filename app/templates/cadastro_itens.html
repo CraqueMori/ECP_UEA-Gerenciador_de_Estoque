@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/inputs.css')}}">
+</head>
+<body>
+<conteiner style="display: flex; justify-content: center;">
+  <form action="" method="post" style="width: 50%;">
+      <input type="name" name="name" placeholder="Insira o nome da ferramenta" style="width: 100%; margin-bottom: 10px;">
+      <input type="quantidade" name="quantidade" placeholder="Insira a Quantidade dos Itens" style="width: 100%; margin-bottom: 10px;">
+      <input type="preço" name="preço" placeholder="Insira o valor do produto" style="width: 100%; margin-bottom: 10px;">
+      <input type="marca" name="marca" placeholder="Insira a marca dos produtos" style="width: 100%; margin-bottom: 10px;">
+      <input type="tipo" name="tipo" placeholder="Insira o Tipo do Produto" style="width: 100%; margin-bottom: 10px;">
+      <input type="submit" value="Cadastrar" style="width: 100%;">
+  </form>
+</conteiner>
+</body>
+</html>

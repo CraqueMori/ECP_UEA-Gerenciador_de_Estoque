@@ -1,0 +1,45 @@
+.conteinerdoido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  input[type=text], input[type=email], input[type=password] {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
+    outline: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  }
+  
+  input[type=submit] {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #3e8e41;
+  }
+

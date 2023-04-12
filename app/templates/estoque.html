@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estt.css')}}">
+
+    <style>
+        /* Estilo para o título */
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para a linha horizontal */
+        hr {
+            margin: 0 auto;
+            width: 80%;
+            height: 3px;
+            background-color: black;
+            border: none;
+        }
+
+        /* Estilo para a tabela */
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        /* Estilo para as células da tabela */
+        td {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        /* Estilo para as células do cabeçalho da tabela */
+        th {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h1>TABELA DE ESTOQUE</h1>
+    <hr>
+    <table >
+        <tr>
+            <td>ID</td>
+            <td>Nome</td>
+            <td>Quantidade</td>
+            <td>Preço</td>
+            <td>Marca</td>
+            <td>Tipo</td>
+            <td>Excluir</td>
+            <td>Update</td>
+            <TD>Add Carrinho</TD>
+        </tr>
+        {% for estoque in estoque %}
+            <tr>
+                <td>{{ estoque.id}}</td>
+                <td>{{ estoque.name}}</td>
+                <td>{{ estoque.quantidade}}</td>
+                <td>{{ estoque.preço}}</td>
+                <td>{{ estoque.marca}}</td>
+                <td>{{ estoque.tipo}}</td>
+                <td><a href="/estoque/{{estoque.id}}">X</a></td>
+                <td><a href="/update_item/{{estoque.id}}">↻</a></td>
+                <td><a href="/add_carrinho/{{estoque.id}}">↻</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
